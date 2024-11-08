@@ -37,21 +37,21 @@
         />
 
     <RadioGroup
-        android:id="@+id/rgFavoriteFruit"
+        android:id="@+id/rgVegNonVeg"
         android:layout_width="match_parent"
         android:paddingLeft="12dp"
         android:layout_height="wrap_content" >
 
 
         <RadioButton
-            android:id="@+id/rbApple"
+            android:id="@+id/rbNonVeg"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Meat ($6.70 per slice)" />
 
 
         <RadioButton
-            android:id="@+id/rbBanana"
+            android:id="@+id/rbVeg"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Vegetarian ($4.25 per slice)" />
@@ -109,6 +109,7 @@
     </LinearLayout>
 
     <Button
+        android:id="@+id/btnSubmit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
