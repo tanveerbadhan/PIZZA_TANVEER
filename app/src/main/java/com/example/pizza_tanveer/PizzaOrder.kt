@@ -8,6 +8,8 @@ class PizzaOrder: Serializable {
     var noOfSlices: Int;
     var isFullPizza: Boolean;
     var isNeedDelivery: Boolean;
+    var tax: Double;
+    var subTotal: Double = 0.00;
 
     constructor(
         isVeg: Boolean = false,
@@ -22,21 +24,20 @@ class PizzaOrder: Serializable {
         this.noOfSlices = noOfSlices
         this.isFullPizza = isFullPizza
         this.isNeedDelivery = isNeedDelivery
-
-    }
-
-    override fun toString(): String {
-        var subTotal: Double = 0.00;
         if(isVeg){
-            subTotal += 4.25 * noOfSlices
+            this.subTotal += 4.25 * noOfSlices
         } else {
-            subTotal += 6.70 * noOfSlices
+            this.subTotal += 6.70 * noOfSlices
         }
 
         if(isNeedDelivery){
             subTotal += 5.25
         }
-        val tax: Double = subTotal * 0.13;
+        this.tax = subTotal * 0.13;
+    }
+
+    override fun toString(): String {
+
 
         var finalReceipt: String = "Pizza Type: ${if(isVeg) "Veg" else "NonVeg"} \n" +
                 "Number Of Slices: ${noOfSlices} \n" +
