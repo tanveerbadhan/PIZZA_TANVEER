@@ -10,6 +10,7 @@ class PizzaOrder: Serializable {
     var isNeedDelivery: Boolean;
     var tax: Double;
     var subTotal: Double = 0.00;
+    var totalCost: Double;
 
     constructor(
         isVeg: Boolean = false,
@@ -34,6 +35,7 @@ class PizzaOrder: Serializable {
             subTotal += 5.25
         }
         this.tax = subTotal * 0.13;
+        this.totalCost = this.subTotal + this.tax
     }
 
     override fun toString(): String {
@@ -45,7 +47,7 @@ class PizzaOrder: Serializable {
                 "Delivery Cost: ${if (isNeedDelivery) "$ 5.25" else "$ 0.00"}\n" +
                 "SubTotal: $${subTotal} \n" +
                 "Total Tax: $${tax} \n" +
-                "Total: $${subTotal + tax} \n"
+                "Total: $${totalCost} \n"
 
         return finalReceipt
     }
