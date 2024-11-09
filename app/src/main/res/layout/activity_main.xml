@@ -45,6 +45,7 @@
 
         <RadioButton
             android:id="@+id/rbNonVeg"
+            android:checked="true"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Meat ($6.70 per slice)" />
@@ -63,6 +64,7 @@
             android:layout_marginTop="12dp"/>
 
         <EditText
+            android:id="@+id/noOfSlices"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="number"
@@ -70,43 +72,25 @@
 
     </RadioGroup>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingLeft="16dp"
-        android:layout_marginBottom="12dp"
-        >
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Entire Pizza? (8 Slices)"/>
+
 
         <Switch
-            android:layout_width="wrap_content"
+            android:id="@+id/switchFullPizza"
+            android:paddingLeft="16dp"
+            android:layout_marginBottom="12dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:text="Entire Pizza? (8 Slices)"
             />
 
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+    <Switch
+        android:id="@+id/switchNeedDelivery"
         android:paddingLeft="16dp"
         android:layout_marginBottom="12dp"
-        >
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Need Delivery? (+ $10.50)"/>
-
-        <Switch
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            />
-
-
-    </LinearLayout>
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Need Delivery? (+ $5.25)"
+        />
 
     <Button
         android:id="@+id/btnSubmit"
@@ -114,5 +98,6 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
         android:text="Submit Order"/>
+
 </LinearLayout>
 </ScrollView>

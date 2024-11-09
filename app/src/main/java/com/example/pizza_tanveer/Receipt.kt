@@ -10,5 +10,10 @@ class Receipt : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityReceiptBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        if(intent != null){
+            val pizzaOrder: PizzaOrder = intent.getSerializableExtra("EXTRA_PIZZA_ORDER") as PizzaOrder
+            binding.textReceipt.setText(pizzaOrder.toString())
+        }
     }
 }
